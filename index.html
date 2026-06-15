@@ -108,11 +108,10 @@
   .secure-line{display:flex;justify-content:flex-end;margin-bottom:14px}
   .secure-line span{font-family:var(--mono);font-size:9.5px;letter-spacing:.18em;color:var(--signal);display:inline-flex;align-items:center;gap:6px}
   .dot{width:6px;height:6px;border-radius:50%;display:inline-block;background:var(--live)}
-  .intake-stack{display:flex;flex-direction:column;gap:10px}
   .intake{display:flex;gap:10px}
-  .intake-stack input{flex:1;background:transparent;border:1px solid var(--hair2);border-radius:5px;color:var(--bone);padding:13px 15px;font-family:var(--mono);font-size:14px;transition:border-color .2s}
-  .intake-stack input::placeholder{color:var(--bone-dim)}
-  .intake-stack input:focus{border-color:var(--signal);outline:none}
+  .intake input{flex:1;background:transparent;border:1px solid var(--hair2);border-radius:5px;color:var(--bone);padding:13px 15px;font-family:var(--mono);font-size:14px;transition:border-color .2s}
+  .intake input::placeholder{color:var(--bone-dim)}
+  .intake input:focus{border-color:var(--signal);outline:none}
   .routing{font-family:var(--mono);font-size:11px;color:var(--bone-dim);margin-top:14px;letter-spacing:.05em;line-height:1.7}
 
   /* footer */
@@ -260,13 +259,10 @@
       <p class="audience">FOR REFERRED PARTIES</p>
     </div>
     <div class="reveal">
-      <div class="intake-stack">
-        <input id="briefRef" type="text" placeholder="referred by" aria-label="Referred by" />
-        <div class="intake">
-          <input id="briefEmail" type="email" placeholder="name@agency.gov" aria-label="Your email address" />
-          <!-- EDIT verb here to match the hero -->
-          <button id="briefBtn" class="btn btn-primary" type="button">Request a Briefing</button>
-        </div>
+      <div class="intake">
+        <input id="briefEmail" type="email" placeholder="name@agency.gov" aria-label="Your email address" />
+        <!-- EDIT verb here to match the hero -->
+        <button id="briefBtn" class="btn btn-primary" type="button">Request a Briefing</button>
       </div>
       <p class="routing">CONFIDENTIAL · ROUTED TO SAM RAD</p>
     </div>
@@ -302,9 +298,8 @@
   if(btn){
     btn.addEventListener('click', function(){
       var email=(document.getElementById('briefEmail').value || '').trim();
-      var ref=(document.getElementById('briefRef').value || '').trim();
       var subject=encodeURIComponent('Briefing Request — RADOC');
-      var body=encodeURIComponent('Requesting a briefing.\n\nReferred by: ' + (ref || '(not provided)') + '\nContact: ' + (email || '(no email provided)') + '\nOrganization: \nArea of interest: \n\n—');
+      var body=encodeURIComponent('Requesting a briefing.\n\nContact: ' + (email || '(no email provided)') + '\nOrganization: \nArea of interest: \n\n—');
       window.location.href='mailto:sam@sam-rad.com?subject=' + subject + '&body=' + body;
     });
   }
