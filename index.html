@@ -108,10 +108,11 @@
   .secure-line{display:flex;justify-content:flex-end;margin-bottom:14px}
   .secure-line span{font-family:var(--mono);font-size:9.5px;letter-spacing:.18em;color:var(--signal);display:inline-flex;align-items:center;gap:6px}
   .dot{width:6px;height:6px;border-radius:50%;display:inline-block;background:var(--live)}
+  .intake-stack{display:flex;flex-direction:column;gap:10px}
   .intake{display:flex;gap:10px}
-  .intake input{flex:1;background:transparent;border:1px solid var(--hair2);border-radius:5px;color:var(--bone);padding:13px 15px;font-family:var(--mono);font-size:14px;transition:border-color .2s}
-  .intake input::placeholder{color:var(--bone-dim)}
-  .intake input:focus{border-color:var(--signal);outline:none}
+  .intake-stack input{flex:1;background:transparent;border:1px solid var(--hair2);border-radius:5px;color:var(--bone);padding:13px 15px;font-family:var(--mono);font-size:14px;transition:border-color .2s}
+  .intake-stack input::placeholder{color:var(--bone-dim)}
+  .intake-stack input:focus{border-color:var(--signal);outline:none}
   .routing{font-family:var(--mono);font-size:11px;color:var(--bone-dim);margin-top:14px;letter-spacing:.05em;line-height:1.7}
 
   /* footer */
@@ -245,7 +246,7 @@
         <div style="padding-left:18px"><span class="arrow">└→</span> Perceptual Security</div>
         <div style="padding-left:18px"><span class="arrow">└→</span> Cognitive Creativity</div>
       </div>
-      <p class="source">Pioneered by founder Sam Rad · Human Intelligence Futurist</p>
+      <p class="source">Pioneered by founder <a href="https://sam-rad.com" target="_blank" rel="noopener" style="color:inherit;border-bottom:1px solid var(--hair2)">Sam Rad</a> · Human Intelligence Futurist</p>
     </div>
   </div>
 </section>
@@ -254,17 +255,20 @@
 <section class="section contact" id="contact" style="border-bottom:none">
   <div class="wrap">
     <div class="reveal">
-      <p class="eyebrow" style="margin-bottom:22px">Intake</p>
+      <p class="eyebrow" style="margin-bottom:22px">By Introduction</p>
       <h2>Request a<br>Briefing</h2>
-      <p class="audience">GOVERNMENT · ENTERPRISE · INSTITUTIONS</p>
+      <p class="audience">FOR REFERRED PARTIES</p>
     </div>
     <div class="reveal">
-      <div class="intake">
-        <input id="briefEmail" type="email" placeholder="name@agency.gov" aria-label="Your email address" />
-        <!-- EDIT verb here to match the hero -->
-        <button id="briefBtn" class="btn btn-primary" type="button">Request a Briefing</button>
+      <div class="intake-stack">
+        <input id="briefRef" type="text" placeholder="referred by" aria-label="Referred by" />
+        <div class="intake">
+          <input id="briefEmail" type="email" placeholder="name@agency.gov" aria-label="Your email address" />
+          <!-- EDIT verb here to match the hero -->
+          <button id="briefBtn" class="btn btn-primary" type="button">Request a Briefing</button>
+        </div>
       </div>
-      <p class="routing">CONFIDENTIAL · ROUTED TO SAM RAD<br>BY REQUEST · RESPONSES WITHIN 48H</p>
+      <p class="routing">CONFIDENTIAL · ROUTED TO SAM RAD</p>
     </div>
   </div>
 </section>
@@ -298,8 +302,9 @@
   if(btn){
     btn.addEventListener('click', function(){
       var email=(document.getElementById('briefEmail').value || '').trim();
+      var ref=(document.getElementById('briefRef').value || '').trim();
       var subject=encodeURIComponent('Briefing Request — RADOC');
-      var body=encodeURIComponent('Requesting a briefing.\n\nContact: ' + (email || '(no email provided)') + '\nOrganization: \nArea of interest: \n\n—');
+      var body=encodeURIComponent('Requesting a briefing.\n\nReferred by: ' + (ref || '(not provided)') + '\nContact: ' + (email || '(no email provided)') + '\nOrganization: \nArea of interest: \n\n—');
       window.location.href='mailto:sam@sam-rad.com?subject=' + subject + '&body=' + body;
     });
   }
