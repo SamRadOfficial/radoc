@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>RADOC — Stories to Shape Better Futures</title>
+<meta name="description" content="RADOC (RAD Original Creations) is a meta-media studio pioneering Narrative Futurism — human intelligence for the age of acceleration." />
+<meta property="og:title" content="RADOC — Stories to Shape Better Futures" />
+<meta property="og:description" content="A meta-media studio pioneering Narrative Futurism. Human intelligence for the age of acceleration." />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://radoc.co" />
+<meta name="theme-color" content="#0B0A09" />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%230B0A09'/%3E%3Ctext x='50' y='70' font-family='Archivo,sans-serif' font-weight='900' font-size='56' fill='%23ECE7DC' text-anchor='middle'%3ER%3C/text%3E%3C/svg%3E" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;800;900&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    --ink:#0B0A09; --panel:#131210; --bone:#ECE7DC; --bone-dim:#9A968C;
+    --hair:rgba(236,231,220,0.10); --hair2:rgba(236,231,220,0.18);
+    --signal:#6FC3CE; --live:#E0A33B;
+    --sans:'Archivo',system-ui,sans-serif; --serif:'Newsreader',Georgia,serif; --mono:'IBM Plex Mono',ui-monospace,monospace;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{background:var(--ink);color:var(--bone);font-family:var(--sans);line-height:1.5;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+  a{color:inherit;text-decoration:none}
+  ::selection{background:var(--signal);color:var(--ink)}
+  :focus-visible{outline:2px solid var(--signal);outline-offset:3px;border-radius:2px}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 40px}
+  .mono{font-family:var(--mono);letter-spacing:.04em}
+  .serif{font-family:var(--serif)}
+  .eyebrow{font-family:var(--mono);font-size:11px;letter-spacing:.28em;text-transform:uppercase;color:var(--bone-dim)}
+  section[id]{scroll-margin-top:84px}
+
+  /* wordmark */
+  .wm{font-family:var(--sans);font-weight:800;display:inline-flex;align-items:center;letter-spacing:.005em}
+  .wm .oc{display:inline-block;background:var(--bone);color:var(--ink);padding:0 .1em;margin-left:.03em;border-radius:2px}
+
+  /* utility bar */
+  .util{border-bottom:1px solid var(--hair)}
+  .util .wrap{display:flex;justify-content:space-between;align-items:center;padding:9px 40px;font-family:var(--mono);font-size:10.5px;letter-spacing:.12em;color:var(--bone-dim)}
+
+  /* nav */
+  header.nav{position:sticky;top:0;z-index:50;background:rgba(11,10,9,.82);backdrop-filter:blur(10px);border-bottom:1px solid transparent;transition:border-color .3s,background .3s}
+  header.nav.scrolled{border-bottom-color:var(--hair);background:rgba(11,10,9,.92)}
+  header.nav .wrap{display:flex;justify-content:space-between;align-items:center;padding-top:16px;padding-bottom:16px}
+  header.nav .wm{font-size:20px}
+  nav.links{display:flex;gap:26px}
+  nav.links a{font-size:13px;color:var(--bone-dim);transition:color .2s}
+  nav.links a:hover{color:var(--bone)}
+
+  /* hero */
+  .hero{position:relative;overflow:hidden;border-bottom:1px solid var(--hair)}
+  .hero .net{position:absolute;inset:0;width:100%;height:100%;pointer-events:none}
+  .hero .wrap{position:relative;z-index:1;padding-top:108px;padding-bottom:96px}
+  .hero .eyebrow{color:var(--signal);margin-bottom:26px}
+  h1.hero-h{font-family:var(--sans);font-weight:600;font-size:clamp(42px,7vw,78px);line-height:.98;letter-spacing:-.02em;max-width:12ch}
+  .hero .sub{font-family:var(--serif);font-style:italic;font-size:clamp(18px,2.5vw,25px);color:var(--bone-dim);margin-top:24px;max-width:30ch}
+  .cta-row{display:flex;gap:14px;margin-top:42px;flex-wrap:wrap}
+  .btn{display:inline-flex;align-items:center;gap:10px;font-family:var(--sans);font-size:13px;font-weight:500;padding:13px 26px;border-radius:5px;cursor:pointer;border:0;transition:transform .15s,background .2s,border-color .2s}
+  .btn:active{transform:scale(.98)}
+  .btn-primary{background:var(--bone);color:var(--ink)}
+  .btn-primary:hover{background:#fff}
+  .btn-ghost{background:transparent;border:1px solid var(--hair2);color:var(--bone)}
+  .btn-ghost:hover{border-color:var(--bone)}
+
+  /* sections */
+  .section{padding:88px 0;border-bottom:1px solid var(--hair)}
+  .slab{display:flex;align-items:center;gap:14px;margin-bottom:44px}
+  .slab .rule{height:1px;background:var(--hair);flex:1}
+
+  /* intro band */
+  .lede{font-family:var(--serif);font-weight:400;font-size:clamp(26px,4vw,36px);line-height:1.32;letter-spacing:-.01em;max-width:19ch}
+  .lede em{font-style:italic}
+  .intro-body{font-family:var(--serif);font-size:clamp(16px,1.8vw,18px);line-height:1.6;color:var(--bone-dim);margin-top:24px;max-width:58ch}
+
+  /* framework */
+  .pillars{display:grid;grid-template-columns:repeat(3,1fr)}
+  .pillar{padding:0 32px;border-left:1px solid var(--hair)}
+  .pillar:first-child{padding-left:0;border-left:none}
+  .pillar h3{font-family:var(--sans);font-weight:600;font-size:21px;letter-spacing:-.01em;line-height:1.1;margin-bottom:16px}
+  .pillar p{font-family:var(--serif);font-size:16px;line-height:1.55;color:var(--bone-dim)}
+
+  /* worlds */
+  .worlds{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--hair);border:1px solid var(--hair)}
+  .world{background:var(--ink);padding:28px 26px 24px;min-height:172px;display:flex;flex-direction:column;transition:background .25s}
+  .world:hover{background:var(--panel)}
+  .world h3{font-family:var(--sans);font-weight:600;font-size:21px;letter-spacing:-.01em;margin-bottom:9px;color:var(--signal)}
+  .world p{font-family:var(--serif);font-size:15.5px;line-height:1.5;color:var(--bone-dim);margin-bottom:auto}
+  .flag{font-family:var(--mono);font-size:9.5px;letter-spacing:.1em;color:var(--signal);margin-top:18px}
+  .flag.soon{color:var(--bone-dim);opacity:.55}
+
+  /* about */
+  .about .wrap{display:grid;grid-template-columns:1.2fr 1fr;gap:56px;align-items:start}
+  .about .claim{font-family:var(--serif);font-size:clamp(22px,2.8vw,28px);line-height:1.42;letter-spacing:-.01em}
+  .about .claim .key{color:var(--signal)}
+  .nest{font-family:var(--mono);font-size:12px;line-height:2;color:var(--bone-dim)}
+  .nest .l1{color:var(--bone)}
+  .nest .arrow{color:var(--signal)}
+  .source{margin-top:22px;padding-top:18px;border-top:1px solid var(--hair);font-family:var(--mono);font-size:11px;letter-spacing:.05em;color:var(--bone-dim)}
+
+  /* contact — secure intake */
+  .contact{background:var(--panel)}
+  .contact .wrap{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start}
+  .contact h2{font-family:var(--sans);font-weight:600;font-size:clamp(30px,4.4vw,44px);letter-spacing:-.02em;line-height:1.02}
+  .contact .audience{font-family:var(--mono);font-size:11px;letter-spacing:.14em;color:var(--bone-dim);margin-top:20px}
+  .secure-line{display:flex;justify-content:flex-end;margin-bottom:14px}
+  .secure-line span{font-family:var(--mono);font-size:9.5px;letter-spacing:.18em;color:var(--signal);display:inline-flex;align-items:center;gap:6px}
+  .dot{width:6px;height:6px;border-radius:50%;display:inline-block;background:var(--live)}
+  .intake{display:flex;gap:10px}
+  .intake input{flex:1;background:transparent;border:1px solid var(--hair2);border-radius:5px;color:var(--bone);padding:13px 15px;font-family:var(--mono);font-size:13px;transition:border-color .2s}
+  .intake input::placeholder{color:var(--bone-dim)}
+  .intake input:focus{border-color:var(--signal);outline:none}
+  .routing{font-family:var(--mono);font-size:10px;color:var(--bone-dim);margin-top:14px;letter-spacing:.05em;line-height:1.7}
+
+  /* footer */
+  footer.foot .wrap{display:flex;justify-content:space-between;align-items:center;padding-top:32px;padding-bottom:32px;flex-wrap:wrap;gap:18px}
+  footer.foot .wm{font-size:18px}
+  footer.foot .colophon{font-family:var(--mono);font-size:10px;letter-spacing:.1em;color:var(--bone-dim);text-align:right;line-height:1.85}
+
+  /* reveal */
+  .reveal{opacity:0;transform:translateY(16px);transition:opacity .7s ease,transform .7s ease}
+  .reveal.in{opacity:1;transform:none}
+
+  /* responsive */
+  @media(max-width:760px){
+    .wrap{padding:0 22px}
+    .util .wrap{padding:9px 22px;font-size:9px;letter-spacing:.08em}
+    nav.links{gap:16px}
+    nav.links a{font-size:12px}
+    .hero .wrap{padding-top:72px;padding-bottom:72px}
+    .section{padding:60px 0}
+    .pillars{grid-template-columns:1fr;gap:32px}
+    .pillar{padding:0;border-left:none;border-top:1px solid var(--hair);padding-top:26px}
+    .pillar:first-child{border-top:none;padding-top:0}
+    .worlds{grid-template-columns:1fr}
+    .about .wrap{grid-template-columns:1fr;gap:34px}
+    .contact .wrap{grid-template-columns:1fr;gap:30px}
+    footer.foot .colophon{text-align:left}
+  }
+  @media(prefers-reduced-motion:reduce){
+    html{scroll-behavior:auto}
+    .reveal{opacity:1;transform:none;transition:none}
+  }
+</style>
+</head>
+<body>
+
+<!-- UTILITY BAR -->
+<div class="util">
+  <div class="wrap">
+    <span>RADOC · RAD ORIGINAL CREATIONS</span>
+    <span>META-MEDIA STUDIO</span>
+  </div>
+</div>
+
+<!-- NAV -->
+<header class="nav" id="nav">
+  <div class="wrap">
+    <a class="wm" href="#top" aria-label="RADOC home">RAD<span class="oc">OC</span></a>
+    <nav class="links" aria-label="Primary">
+      <a href="#framework">Framework</a>
+      <a href="#worlds">Worlds</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero" id="top">
+  <svg class="net" id="radnet" viewBox="0 0 720 460" preserveAspectRatio="xMaxYMid slice" aria-hidden="true" fill="none">
+    <defs>
+      <radialGradient id="rg" cx="50%" cy="50%" r="50%">
+        <stop offset="0%" stop-color="#6FC3CE" stop-opacity="0.14"/>
+        <stop offset="55%" stop-color="#6FC3CE" stop-opacity="0.045"/>
+        <stop offset="100%" stop-color="#6FC3CE" stop-opacity="0"/>
+      </radialGradient>
+      <linearGradient id="fade" x1="0" y1="0" x2="1" y2="0">
+        <stop offset="0" stop-color="#fff" stop-opacity="0"/>
+        <stop offset="0.32" stop-color="#fff" stop-opacity="0"/>
+        <stop offset="0.64" stop-color="#fff" stop-opacity="1"/>
+        <stop offset="1" stop-color="#fff" stop-opacity="1"/>
+      </linearGradient>
+      <mask id="mk"><rect x="0" y="0" width="720" height="460" fill="url(#fade)"/></mask>
+      <filter id="sf" x="-60%" y="-60%" width="220%" height="220%"><feGaussianBlur stdDeviation="3.6"/></filter>
+    </defs>
+    <ellipse cx="520" cy="215" rx="300" ry="240" fill="url(#rg)"/>
+    <g id="radweb" mask="url(#mk)"></g>
+  </svg>
+  <div class="wrap">
+    <p class="eyebrow">Narrative Futurism</p>
+    <h1 class="hero-h">Stories to Shape Better Futures</h1>
+    <p class="sub">Human Intelligence for the Age of Acceleration</p>
+    <div class="cta-row">
+      <!-- EDIT verb here (and in #contact below) to switch to "Request Access" -->
+      <a class="btn btn-primary" href="#contact">Request a Briefing</a>
+      <a class="btn btn-ghost" href="#worlds">Enter the worlds <span aria-hidden="true">→</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- INTRO BAND -->
+<section class="section" id="discipline">
+  <div class="wrap">
+    <p class="eyebrow" style="margin-bottom:26px">From Predictive to Prescriptive</p>
+    <p class="lede reveal">The future isn't something we forecast — it's something we <em>author</em>.</p>
+    <p class="intro-body reveal">RAD Original Creations (RADOC) works at the intersection of foresight, neuroscience, and storytelling — shaping human perception and possibility across every medium.</p>
+  </div>
+</section>
+
+<!-- FRAMEWORK -->
+<section class="section" id="framework">
+  <div class="wrap">
+    <div class="slab reveal"><span class="eyebrow">The Framework</span><span class="rule"></span></div>
+    <div class="pillars">
+      <div class="pillar reveal"><h3>Narrative Intelligence</h3><p>Understanding how stories shape cognition, culture, and collective behavior.</p></div>
+      <div class="pillar reveal"><h3>Perceptual Security</h3><p>Safeguarding awareness against manipulation — training minds to discern and choose.</p></div>
+      <div class="pillar reveal"><h3>Cognitive Creativity</h3><p>Activating higher creative states through neuroscience, music, and embodiment.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- WORLDS -->
+<section class="section" id="worlds">
+  <div class="wrap">
+    <div class="slab reveal"><span class="eyebrow">Our Worlds</span><span class="rule"></span></div>
+    <div class="worlds reveal">
+      <article class="world"><h3>Film &amp; Series</h3><p>Cinematic and episodic worlds that surface the unseen systems shaping reality.</p><div class="flag">↳ ILLICIT SHADOWS</div></article>
+      <article class="world"><h3>Books &amp; Publishing</h3><p>Long-form narrative universes — from investigation to imagination.</p><div class="flag soon">↳ INVESTIGATIVE WORLDS</div></article>
+      <article class="world"><h3>Games &amp; Immersive</h3><p>Interactive and extended-reality experiences exploring perception, agency, and play.</p><div class="flag soon">↳ XR · INTERACTIVE</div></article>
+      <article class="world"><h3>Theater &amp; Installation</h3><p>Live, spatial environments where stories become space.</p><div class="flag">↳ MUSEUM OF ILLICIT SHADOWS</div></article>
+      <article class="world"><h3>Sound &amp; Score</h3><p>Scored narrative and sonic experience — soundscapes, scores, and dispatches.</p><div class="flag soon">↳ AUDIO · DISPATCHES</div></article>
+      <article class="world"><h3>Foresight &amp; Training</h3><p>Intelligence products — briefings, predictive systems, and perceptual-security training.</p><div class="flag soon">↳ BRIEFINGS · ACADEMY</div></article>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="section about" id="about">
+  <div class="wrap">
+    <p class="claim reveal">We craft worlds that <span class="key">train awareness, inspire creativity, and shape collective futures.</span></p>
+    <div class="reveal">
+      <div class="nest">
+        <div class="l1">Human Intelligence Futurism <span style="color:var(--bone-dim)">— worldview</span></div>
+        <div><span class="arrow">└→</span> Narrative Futurism <span style="color:var(--bone-dim)">— discipline</span></div>
+        <div style="padding-left:18px"><span class="arrow">└→</span> Narrative Intelligence</div>
+        <div style="padding-left:18px"><span class="arrow">└→</span> Perceptual Security</div>
+        <div style="padding-left:18px"><span class="arrow">└→</span> Cognitive Creativity</div>
+      </div>
+      <p class="source">Pioneered by founder Sam Rad · Human Intelligence Futurist</p>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT — SECURE INTAKE -->
+<section class="section contact" id="contact" style="border-bottom:none">
+  <div class="wrap">
+    <div class="reveal">
+      <p class="eyebrow" style="margin-bottom:22px">Secure Intake</p>
+      <h2>Request a<br>Briefing</h2>
+      <p class="audience">GOVERNMENT · ENTERPRISE · INSTITUTIONS</p>
+    </div>
+    <div class="reveal">
+      <div class="secure-line"><span><span class="dot"></span>SECURE LINE</span></div>
+      <div class="intake">
+        <input id="briefEmail" type="email" placeholder="name@agency.gov" aria-label="Your email address" />
+        <!-- EDIT verb here to match the hero -->
+        <button id="briefBtn" class="btn btn-primary" type="button">Request a Briefing</button>
+      </div>
+      <p class="routing">CONFIDENTIAL · ROUTED TO sam@sam-rad.com<br>BY REQUEST · RESPONSES WITHIN 48H</p>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="foot" style="border-top:1px solid var(--hair)">
+  <div class="wrap">
+    <a class="wm" href="#top" aria-label="RADOC home">RAD<span class="oc">OC</span></a>
+    <div class="colophon">NYC · WASHINGTON DC · LONDON<br>© 2026 RAD ORIGINAL CREATIONS</div>
+  </div>
+</footer>
+
+<script>
+  /* sticky nav border */
+  var nav=document.getElementById('nav');
+  function onScroll(){ nav.classList.toggle('scrolled', window.scrollY>12); }
+  onScroll(); window.addEventListener('scroll', onScroll, {passive:true});
+
+  /* reveal on scroll */
+  if(!window.matchMedia('(prefers-reduced-motion:reduce)').matches){
+    var io=new IntersectionObserver(function(es){
+      es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+    },{threshold:0.12, rootMargin:'0px 0px -8% 0px'});
+    document.querySelectorAll('.reveal').forEach(function(el){ io.observe(el); });
+  } else {
+    document.querySelectorAll('.reveal').forEach(function(el){ el.classList.add('in'); });
+  }
+
+  /* secure intake -> mailto */
+  var btn=document.getElementById('briefBtn');
+  if(btn){
+    btn.addEventListener('click', function(){
+      var email=(document.getElementById('briefEmail').value || '').trim();
+      var subject=encodeURIComponent('Briefing Request — RADOC');
+      var body=encodeURIComponent('Requesting a briefing.\n\nContact: ' + (email || '(no email provided)') + '\nOrganization: \nArea of interest: \n\n—');
+      window.location.href='mailto:sam@sam-rad.com?subject=' + subject + '&body=' + body;
+    });
+  }
+
+  /* hero neural web — static, right-focused, seeded for a consistent layout */
+  (function(){
+    var g=document.getElementById('radweb'); if(!g) return;
+    var NS='http://www.w3.org/2000/svg';
+    var s=20260615; function rnd(){ s=(s*1103515245+12345)&0x7fffffff; return s/0x7fffffff; }
+    var N=44, nodes=[];
+    for(var i=0;i<N;i++){ var x=720-Math.pow(rnd(),1.7)*430; var y=26+rnd()*408; nodes.push({x:x,y:y}); }
+    var maxD=118, seen={};
+    for(var i=0;i<N;i++){
+      var d=[];
+      for(var j=0;j<N;j++){ if(i===j) continue; var dx=nodes[i].x-nodes[j].x, dy=nodes[i].y-nodes[j].y; d.push({j:j,dist:Math.sqrt(dx*dx+dy*dy)}); }
+      d.sort(function(a,b){return a.dist-b.dist;});
+      var k=0;
+      for(var t=0;t<d.length && k<3;t++){
+        if(d[t].dist>maxD) break;
+        var a=Math.min(i,d[t].j), b=Math.max(i,d[t].j), key=a+'-'+b;
+        if(seen[key]) continue; seen[key]=1; k++;
+        var teal=rnd()<0.22;
+        var ln=document.createElementNS(NS,'line');
+        ln.setAttribute('x1',nodes[i].x.toFixed(1)); ln.setAttribute('y1',nodes[i].y.toFixed(1));
+        ln.setAttribute('x2',nodes[d[t].j].x.toFixed(1)); ln.setAttribute('y2',nodes[d[t].j].y.toFixed(1));
+        ln.setAttribute('stroke', teal?'#6FC3CE':'#ECE7DC'); ln.setAttribute('stroke-width','0.7'); ln.setAttribute('opacity', teal?'0.24':'0.16');
+        g.appendChild(ln);
+      }
+    }
+    for(var i=0;i<N;i++){
+      var teal=rnd()<0.26;
+      var c=document.createElementNS(NS,'circle');
+      c.setAttribute('cx',nodes[i].x.toFixed(1)); c.setAttribute('cy',nodes[i].y.toFixed(1));
+      c.setAttribute('r', teal?'2.0':'1.7'); c.setAttribute('fill', teal?'#6FC3CE':'#ECE7DC'); c.setAttribute('opacity', teal?'0.85':'0.30');
+      g.appendChild(c);
+    }
+    [4,11,19,28].forEach(function(gi){
+      if(!nodes[gi]) return;
+      var c=document.createElementNS(NS,'circle');
+      c.setAttribute('cx',nodes[gi].x.toFixed(1)); c.setAttribute('cy',nodes[gi].y.toFixed(1));
+      c.setAttribute('r','4.2'); c.setAttribute('fill','#6FC3CE'); c.setAttribute('opacity','0.4'); c.setAttribute('filter','url(#sf)');
+      g.insertBefore(c, g.firstChild);
+    });
+  })();
+</script>
+</body>
+</html>
